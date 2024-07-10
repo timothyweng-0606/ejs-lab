@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%=category.charAt(0).toUpperCase()+ category.slice(1)%></title>
+</head>
+<body>
+<%- include('./partials/nav') %>
+<h1><%=category.charAt(0).toUpperCase()+ category.slice(1)%></h1>
+<br>
+  <% menuItems.forEach(item => {%>
+    <h2>Item Name: <%=item.name%></h2>
+    <h3>Price: <%=item.price%></h3>
+    <h3>
+        Rating:
+     <% if(item.rating === 5) { %>
+        ⭐️⭐️⭐️⭐️⭐️
+      <% } else if(item.rating === 4) { %>
+        ⭐️⭐️⭐️⭐️
+      <% } else if(item.rating === 3) { %>
+        ⭐️⭐️⭐️
+      <% } else if(item.rating === 2) { %>
+        ⭐️⭐️
+      <% } else { %>
+        ⭐️
+      <% } %> 
+    </h3>
+    <h3>Detail: <%=item.details%></h3>
+    <br>
+ <% }) %>
+
+</body>
+</html>
